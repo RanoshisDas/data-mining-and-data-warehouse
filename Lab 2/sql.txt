@@ -1,0 +1,31 @@
+//**** Create Product table SQL command ****//
+
+CREATE TABLE Product_257 (
+
+product_id Number(10)NOT NULL PRIMARY KEY,
+product_Name Varchar2(30),
+CATEGORY Varchar2(20),
+PRICE Number(10,2)
+);
+
+//**** Create Customer table SQL command ****//
+
+CREATE TABLE Customer_257 (
+
+customer_id Number(10)NOT NULL PRIMARY KEY,
+customer_Name Varchar2(30),
+CITY Varchar2(20),
+EMAIL Varchar2(50)
+);
+
+//**** Create Sales table SQL command ****//
+
+CREATE TABLE Sales_257 (
+sales_id Number(10) NOT NULL PRIMARY KEY,
+product_id Number(10)NOT NULL,
+customer_id Number(10),
+quantity Number(10),
+sale_date Date,
+foreign key (product_id) REFERENCES Product_257(product_id),
+foreign key (customer_id) REFERENCES Customer_257(customer_id)
+);
